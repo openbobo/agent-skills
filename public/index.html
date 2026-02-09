@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 Agent Skills Directory</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 900px; margin: 0 auto; padding: 40px 20px;
+            background: #0d1117; color: #c9d1d9; line-height: 1.6;
+        }
+        h1 { color: #58a6ff; margin-bottom: 10px; }
+        h2 { color: #f0f6fc; margin: 30px 0 15px; border-bottom: 1px solid #30363d; padding-bottom: 10px; }
+        h3 { color: #8b949e; margin: 20px 0 10px; }
+        a { color: #58a6ff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        code { background: #161b22; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #161b22; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 10px 0; }
+        .category { background: #161b22; border-radius: 8px; padding: 20px; margin: 15px 0; }
+        .quick-ref { background: #21262d; border-radius: 8px; padding: 20px; }
+        table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+        th, td { text-align: left; padding: 10px; border-bottom: 1px solid #30363d; }
+        th { color: #8b949e; }
+        .footer { margin-top: 50px; color: #8b949e; font-size: 0.9em; }
+        ul { margin-left: 20px; }
+        li { margin: 8px 0; }
+    </style>
+</head>
+<body>
+    <h1>🤖 Agent Skills Directory</h1>
+    <p>A curated guide of skills, commands, and patterns learned by OpenClaw. Use this as a reference for solving problems efficiently.</p>
+
+    <h2>📁 Categories</h2>
+    
+    <div class="category">
+        <h3>🐙 GitHub CLI</h3>
+        <ul>
+            <li><code>gh run view &lt;id&gt; --log-failed</code> - Show only failed CI/CD steps</li>
+            <li><code>--json</code> + <code>--jq</code> for structured API output</li>
+            <li><code>gh api repos/owner/repo/pulls/55 --jq '.title, .state'</code></li>
+        </ul>
+    </div>
+
+    <div class="category">
+        <h3>🟩 tmux</h3>
+        <ul>
+            <li>Socket isolation via <code>CLAWDBOT_TMUX_SOCKET_DIR</code></li>
+            <li><code>PYTHON_BASIC_REPL=1</code> for Python REPL automation</li>
+            <li><code>capture-pane -p -J</code> joins wrapped lines</li>
+            <li><code>wait-for-text.sh</code> helper for regex polling</li>
+            <li>Detect completion via <code>❯</code> or <code>$</code> prompts</li>
+        </ul>
+    </div>
+
+    <div class="category">
+        <h3>💻 Coding Agent</h3>
+        <ul>
+            <li><code>workdir:/path/to/project</code> - Focus agent on directory</li>
+            <li><code>--yolo</code> / <code>--full-auto</code> modes</li>
+            <li>Process tool: <code>process action:log/poll/write/kill</code></li>
+        </ul>
+    </div>
+
+    <div class="category">
+        <h3>📧 Google Workspace (gog)</h3>
+        <ul>
+            <li><code>gog gmail search 'newer_than:7d' --max 10</code></li>
+            <li><code>gog calendar events &lt;id&gt; --from &lt;iso&gt; --to &lt;iso&gt;</code></li>
+            <li><code>gog drive search "query" --max 10</code></li>
+        </ul>
+    </div>
+
+    <div class="category">
+        <h3>📝 Obsidian</h3>
+        <ul>
+            <li>Vaults = plain folders (edit .md files directly)</li>
+            <li><code>obsidian-cli move</code> auto-updates ALL wikilinks</li>
+            <li>Config: <code>~/Library/Application Support/obsidian/obsidian.json</code></li>
+        </ul>
+    </div>
+
+    <div class="category">
+        <h3>🔗 MCP (mcporter)</h3>
+        <ul>
+            <li><code>mcporter list</code> - List servers & schemas</li>
+            <li><code>mcporter call &lt;server&gt;.&lt;tool&gt; &lt;args&gt;</code></li>
+            <li><code>--output json</code> for scripting</li>
+            <li><code>mcporter generate-cli</code> for TypeScript wrappers</li>
+        </ul>
+    </div>
+
+    <h2>⚡ Quick Reference</h2>
+    <div class="quick-ref">
+        <table>
+            <tr><th>Category</th><th>Command</th><th>Description</th></tr>
+            <tr><td>GitHub</td><td><code>gh run view &lt;id&gt; --log-failed</code></td><td>Show only FAILED CI steps</td></tr>
+            <tr><td>GitHub</td><td><code>gh api ... --jq '.field'</code></td><td>Extract specific fields</td></tr>
+            <tr><td>tmux</td><td><code>PYTHON_BASIC_REPL=1</code></td><td>Required for Python REPL</td></tr>
+            <tr><td>tmux</td><td><code>capture-pane -p -J</code></td><td>Join wrapped lines</td></tr>
+            <tr><td>Agents</td><td><code>workdir:/path</code></td><td>Focus agent on directory</td></tr>
+            <tr><td>Agents</td><td><code>process action:poll</code></td><td>Check if done</td></tr>
+            <tr><td>Gmail</td><td><code>gog gmail search 'newer_than:1d'</code></td><td>Recent emails</td></tr>
+            <tr><td>Obsidian</td><td>Vault = folder</td><td>Edit .md files directly</td></tr>
+            <tr><td>MCP</td><td><code>mcporter list</code></td><td>List servers</td></tr>
+        </table>
+    </div>
+
+    <h2>🧠 Best Practices</h2>
+    <div class="category">
+        <h3>CI/CD Debugging</h3>
+        <pre>gh run view &lt;id&gt; --log-failed
+gh run view &lt;id&gt; --repo owner/repo --log-failed</pre>
+
+        <h3>Parallel Agents</h3>
+        <pre>PYTHON_BASIC_REP=1  # Required for send-keys
+capture-pane -p -J  # Clean wrapped output
+wait-for-text.sh -t 60 -i 2 "❯"  # Wait for prompt</pre>
+
+        <h3>Memory Management</h3>
+        <ul>
+            <li><code>memory_search</code> semantically searches MEMORY.md + memory/*.md</li>
+            <li>Update <code>memory/YYYY-MM-DD.md</code> daily</li>
+            <li>Distill to <code>MEMORY.md</code> periodically</li>
+        </ul>
+    </div>
+
+    <h2>🔗 Quick Links</h2>
+    <ul>
+        <li><a href="https://docs.openclaw.ai" target="_blank">OpenClaw Docs</a></li>
+        <li><a href="https://clawdhub.com" target="_blank">ClawdHub Skills</a></li>
+        <li><a href="https://cli.github.com" target="_blank">GitHub CLI Reference</a></li>
+    </ul>
+
+    <div class="footer">
+        <p>Last updated: 2026-02-09</p>
+        <p>Generated by OpenClaw self-improvement routine</p>
+    </div>
+</body>
+</html>
